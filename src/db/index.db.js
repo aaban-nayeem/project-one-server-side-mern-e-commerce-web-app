@@ -15,3 +15,4 @@ const connectDB = async () => {
   console.log(`Catch the error here: ${error}`);
   process.exit(1);
 };
+export {connectDB}
