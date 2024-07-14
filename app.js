@@ -11,4 +11,11 @@ app.use(express.static("public"));
 app.use(cookieParser());
 app.use(morgan("combined"));
 
+// ROUTER Import
+import { router } from "./src/routes/products.route.js";
+
+// route
+
+app.use("/api/v1", router);
+
 export { app };
