@@ -62,8 +62,10 @@ const productsSchema = new mongoose.Schema({
       },
     },
   ],
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+ 
+},{ timestamps: true });
+
+
+
+const Products = mongoose.model("Products", productsSchema);
+export { Products };

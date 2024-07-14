@@ -3,12 +3,15 @@ import { app } from "./app.js";
 import dotenv from "dotenv";
 dotenv.config();
 
-connectDB()
-  .then(
+const startServer = async () => {
+  try {
+    await connectDB();
     app.listen(process.env.PORT, () => {
       console.log(`Server running on port ${process.env.PORT}`);
-    }),
-  )
-  .catch((error) => {
-    console.log(`MongoDB connection failed: ${error}`);
-  });
+    });
+  } catch (error) {
+    console.error(`MongoDB connection failed: ${error.message}`);
+  }
+};
+
+startServer();
