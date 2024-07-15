@@ -6,6 +6,7 @@ const createProducts = async (req, res, next) => {
     success: true,
     products,
   });
+  products.save();
 };
 
 const getAllProducts = (req, res) => {
